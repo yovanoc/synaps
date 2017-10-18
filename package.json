@@ -1,0 +1,43 @@
+{
+  "name": "synaps",
+  "version": "1.0.0",
+  "description": "TypeScript Neural Network Library",
+  "main": "dist/synaps.min.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "test": "mocha --reporter spec --require ts-node/register 'tests/**/*.test.ts'",
+    "lint": "tslint -p .",
+    "lint:fix": "tslint -p . --fix",
+    "build": "webpack --debug; webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yovanoc/synaps.git"
+  },
+  "keywords": [
+    "synaps",
+    "typescript",
+    "library",
+    "neural",
+    "network"
+  ],
+  "author": "Christopher Yovanovitch <yovano_c@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yovanoc/synaps/issues"
+  },
+  "homepage": "https://github.com/yovanoc/synaps#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "ts-loader": "^3.0.2",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.0-dev.20171017",
+    "webpack": "^3.8.1",
+    "yargs": "^9.0.1"
+  }
+}
