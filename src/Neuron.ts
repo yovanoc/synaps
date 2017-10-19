@@ -3,10 +3,16 @@ import { Dendrite } from "./Dendrite";
 
 export class Neuron {
 
-    public axon: Axon = new Axon();
+    public axon: Axon;
 
     private dendrites: Dendrite[];
     private dendriteValues: number[];
+
+    constructor() {
+        this.dendrites = [];
+        this.dendriteValues = [];
+        this.axon = new Axon();
+    }
 
     get inboundDendrites(): Dendrite[] {
         return this.dendrites;
@@ -17,17 +23,14 @@ export class Neuron {
     }
 
     public injectInputNeurons(inputNeurons: Neuron[]): Neuron {
-        const newNeuron = new Neuron(); // FIXME: Not sure!
-
         for (const inputNeuron of inputNeurons) {
-            const axon = inputNeuron.axon;
-            const dendrite = new Dendrite(newNeuron);
+            const dendrite = new Dendrite(this);
 
-            axon.addOutboundDendrite(dendrite);
-            newNeuron.addInboundDendrite(dendrite);
+            inputNeuron.axon.addOutboundDendrite(dendrite);
+            this.addInboundDendrite(dendrite);
         }
 
-        return newNeuron;
+        return this;
     }
 
     public addDendriteValue(newIncomingDendriteValue: number) {
@@ -40,6 +43,7 @@ export class Neuron {
         const sumValue = this.sumDendriteValues();
 
         this.axon.fire(sumValue);
+        console.log("Fired", sumValue);
         this.reloadDendrites();
         this.dendriteValues = [];
     }

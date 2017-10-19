@@ -1,4 +1,5 @@
 import { Dendrite } from "./Dendrite";
+import { Squash } from "./Squash";
 
 export class Axon {
 
@@ -14,15 +15,22 @@ export class Axon {
 
     public fire(value: number) {
         const activationValue = this.calculateActivationValue(value);
-        const dendrites = this.outboundDendrites;
 
-        for (const dendrite of dendrites) {
+        console.log("Activation", activationValue);
+        console.log("OutboundDendrites", this.outboundDendrites.length);
+
+        if (this.outboundDendrites.length === 0) {
+            console.log("Final", activationValue);
+            return;
+        }
+
+        for (const dendrite of this.outboundDendrites) {
             dendrite.fire(activationValue);
         }
     }
 
     private calculateActivationValue(value: number): number {
-        return 1 / (1 + Math.pow(Math.E, -value));
+        return Squash.LOGISTIC(value);
     }
 
 }

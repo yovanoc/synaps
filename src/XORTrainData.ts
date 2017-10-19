@@ -4,7 +4,7 @@ export class XORTrainData {
         return Math.round(Math.random());
     }
 
-    public static generate(iterations: number) {
+    public static generate(iterations: number = 1000) {
         const matrix = [];
 
         for (let i = 0; i < iterations; i++) {

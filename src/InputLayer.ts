@@ -5,15 +5,17 @@ export class InputLayer extends NeuronLayer {
 
     constructor(neuronCount: number) {
         super(neuronCount);
+
+        for (const neuron of this.neurons) {
+            neuron.addInboundDendrite(new Dendrite(neuron));
+        }
     }
 
     get dendrites(): Dendrite[] {
         let allDendrites = [];
 
         for (const neuron of this.neurons) {
-            const dendrites = neuron.inboundDendrites;
-
-            allDendrites = allDendrites.concat(dendrites);
+            allDendrites = allDendrites.concat(neuron.inboundDendrites);
         }
 
         return allDendrites;
@@ -22,7 +24,7 @@ export class InputLayer extends NeuronLayer {
     public fire(inputValues: number[]) {
         // make sure that the input value count matches the dendrite count
         if (this.dendrites.length !== inputValues.length) {
-            throw new Error("NeuronLayer: invalid input value array");
+            throw new Error("InputLayer: invalid input value array");
         }
 
         for (let i = 0; i < this.dendrites.length; i++) {

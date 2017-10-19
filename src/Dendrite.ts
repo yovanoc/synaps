@@ -4,12 +4,13 @@ export class Dendrite {
 
     public weight: number;
 
-    private loaded: boolean = true;
+    private loaded: boolean;
     private neuron: Neuron;
 
     constructor(neuron: Neuron) {
         this.neuron = neuron;
         this.weight = Math.random();
+        this.loaded = true;
     }
 
     public fire(inboundValue: number) {
