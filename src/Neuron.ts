@@ -3,8 +3,7 @@ import { Dendrite } from "./Dendrite";
 
 export class Neuron {
 
-    public axon: Axon;
-
+    private axon: Axon;
     private dendrites: Dendrite[];
     private dendriteValues: number[];
 
@@ -22,15 +21,13 @@ export class Neuron {
         this.dendrites.push(newDendrite);
     }
 
-    public injectInputNeurons(inputNeurons: Neuron[]): Neuron {
+    public injectInputNeurons(inputNeurons: Neuron[]) {
         for (const inputNeuron of inputNeurons) {
             const dendrite = new Dendrite(this);
 
             inputNeuron.axon.addOutboundDendrite(dendrite);
             this.addInboundDendrite(dendrite);
         }
-
-        return this;
     }
 
     public addDendriteValue(newIncomingDendriteValue: number) {

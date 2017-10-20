@@ -150,4 +150,4 @@ NeuralNetwork.dsigmoid = x => x * (1 - x)
 
 NeuralNetwork.tanh = x => Math.tanh(x)
 
-NeuralNetwork.dtanh = x => 1 / (Math.pow(Math.cosh(x), 2))
+NeuralNetwork.dtanh = x => 1 / Math.pow(Math.cosh(x), 2)

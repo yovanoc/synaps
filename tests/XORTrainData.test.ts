@@ -1,4 +1,4 @@
-import { XORTrainData } from "../src/XORTrainData";
+import { XORTrainData } from "../src";
 
 import * as chai from "chai";
 import * as mocha from "mocha";

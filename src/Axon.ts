@@ -1,5 +1,5 @@
 import { Dendrite } from "./Dendrite";
-import { Squash } from "./Squash";
+import { Squash } from "./Utils/Squash";
 
 export class Axon {
 
