@@ -5,7 +5,7 @@
  * @param {number} max - max number
  * @return {float} a random floating point number
  */
-function getRandom(min, max) {
+export function getRandom(min, max) {
   return Math.random() * (max - min) + min;
 }
 
@@ -16,6 +16,6 @@ function getRandom(min, max) {
  * @param {number} max - max number
  * @return {int} a random integer
  */
-function getRandomInt(min, max) {
+export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }

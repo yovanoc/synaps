@@ -1,4 +1,6 @@
-class Matrix {
+import { getRandom } from "./Random"
+
+export class Matrix {
   // Make a matrix full of zeros
   constructor(rows, cols) {
     this.rows = rows;
@@ -12,7 +14,10 @@ class Matrix {
     }
   }
 
-  // This fills the matrix with random values (gaussian distribution)
+  /**
+   * This fills the matrix with random values (gaussian distribution)
+   *
+   */
   randomize() {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
@@ -23,7 +28,11 @@ class Matrix {
     }
   }
 
-  // Take the matrix and make it a 1 dimensional array
+  /**
+   * Take the matrix and make it a 1 dimensional array
+   *
+   * @return {Array}
+   */
   toArray() {
     // Add all the values to the array
     const arr = [];
@@ -35,8 +44,11 @@ class Matrix {
     return arr;
   }
 
-  // This transposes a matrix
-  // rows X cols --> cols X rows
+  /**
+   * This transposes a matrix (rows X cols --> cols X rows)
+   *
+   * @return {Matrix}
+   */
   transpose() {
     const result = new Matrix(this.cols, this.rows);
     for (let i = 0; i < result.rows; i++) {
@@ -47,7 +59,11 @@ class Matrix {
     return result;
   }
 
-  // This makes a copy of the matrix
+  /**
+   * This makes a copy of the matrix
+   *
+   * @return {Matrix}
+   */
   copy() {
     const result = new Matrix(this.rows, this.cols);
     for (let i = 0; i < result.rows; i++) {
@@ -58,7 +74,11 @@ class Matrix {
     return result;
   }
 
-  // This adds another matrix or a single value
+  /**
+   * This adds another matrix or a single value
+   *
+   * @param {Matrix|number} other
+   */
   add(other) {
     // Are we trying to add a Matrix?
     if (other instanceof Matrix) {
@@ -77,8 +97,12 @@ class Matrix {
     }
   }
 
-  // This multiplies another matrix or a single value
-  // This is different than the dot() function!
+  /**
+   * This multiplies another matrix or a single value
+   * This is different than the dot() function!
+   *
+   * @param  {Matrix|number} other
+   */
   multiply(other) {
     // Are we trying to multiply a Matrix?
     if (other instanceof Matrix) {

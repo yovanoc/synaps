@@ -11,7 +11,9 @@ function mutate(x) {
   }
 }
 
-class NeuralNetwork {
+import { Matrix } from "./Matrix";
+
+export class NeuralNetwork {
   // Neural Network constructor function
   constructor(inputnodes, hiddennodes, outputnodes, learning_rate, activation) {
     // If it's a copy of another NN
