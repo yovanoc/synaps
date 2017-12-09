@@ -1,6 +1,6 @@
 {
   "name": "synaps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript Neural Network Library",
   "main": "dist/synaps.min.js",
   "types": "dist/src/index.d.ts",
