@@ -3,34 +3,34 @@ import { Squash } from "./Utils/Squash";
 
 export class Axon {
 
-    public outboundDendrites: Dendrite[];
+  public outboundDendrites: Dendrite[];
 
-    constructor() {
-        this.outboundDendrites = [];
+  constructor() {
+    this.outboundDendrites = [];
+  }
+
+  public addOutboundDendrite(dendrite: Dendrite) {
+    this.outboundDendrites.push(dendrite);
+  }
+
+  public fire(value: number) {
+    const activationValue = this.calculateActivationValue(value);
+
+    console.log("Activation", activationValue);
+    console.log("OutboundDendrites", this.outboundDendrites.length);
+
+    if (this.outboundDendrites.length === 0) {
+      console.log("Final", activationValue);
+      return;
     }
 
-    public addOutboundDendrite(dendrite: Dendrite) {
-        this.outboundDendrites.push(dendrite);
+    for (const dendrite of this.outboundDendrites) {
+      dendrite.fire(activationValue);
     }
+  }
 
-    public fire(value: number) {
-        const activationValue = this.calculateActivationValue(value);
-
-        console.log("Activation", activationValue);
-        console.log("OutboundDendrites", this.outboundDendrites.length);
-
-        if (this.outboundDendrites.length === 0) {
-            console.log("Final", activationValue);
-            return;
-        }
-
-        for (const dendrite of this.outboundDendrites) {
-            dendrite.fire(activationValue);
-        }
-    }
-
-    private calculateActivationValue(value: number): number {
-        return Squash.LOGISTIC(value);
-    }
+  private calculateActivationValue(value: number): number {
+    return Squash.LOGISTIC(value);
+  }
 
 }

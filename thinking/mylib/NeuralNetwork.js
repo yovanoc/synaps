@@ -11,7 +11,7 @@ function mutate(x) {
   }
 }
 
-import { Matrix } from "./Matrix";
+import {Matrix} from "./Matrix";
 
 export class NeuralNetwork {
   // Neural Network constructor function

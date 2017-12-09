@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-      "module": "commonjs",
-      "target": "es5",
-      "sourceMap": true,
-      "declaration": true
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "declaration": true
   },
   "include": [
-      "src/**/*"
+    "src/**/*"
   ],
   "exclude": [
-      "node_modules"
+    "node_modules"
   ]
 }

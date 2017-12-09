@@ -5,7 +5,7 @@ export default class Neuron {
     this.weights = new Array(numberInputs);
     this.bias = math.rand();
 
-    for (let i = 0 ; i < this.weights.length ; i++){
+    for (let i = 0; i < this.weights.length; i++) {
       this.weights[i] = math.rand();
     }
   }
@@ -15,8 +15,8 @@ export default class Neuron {
 
     let sum = 0;
 
-    for (let i = 0 ; i < inputs.length ; i++){
-      sum += inputs[i]*this.weights[i];
+    for (let i = 0; i < inputs.length; i++) {
+      sum += inputs[i] * this.weights[i];
     }
 
     sum += this.bias;

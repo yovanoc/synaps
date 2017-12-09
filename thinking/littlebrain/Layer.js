@@ -4,7 +4,7 @@ export default class Layer {
   constructor(numNeurons, numInputs) {
     this.neurons = new Array(numNeurons);
 
-    for (let i = 0 ; i < this.neurons.length ; i++){
+    for (let i = 0; i < this.neurons.length; i++) {
       this.neurons[i] = new Neuron(numInputs);
     }
   }

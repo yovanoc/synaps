@@ -10,19 +10,19 @@ import FeedForwardNeuralNetwork from "./FeedForwardNeuralNetwork";
 import NeuralNetwork from "./NeuralNetwork";
 
 export default {
-    Activation: {
-        ArcTangent,
-        BinaryStep,
-        GaussianFunction,
-        HyperbolicTangent,
-        Identity,
-        LogisticFunction,
-        RectifiedLinearUnit,
-        SinusoidFunction,
+  Activation: {
+    ArcTangent,
+    BinaryStep,
+    GaussianFunction,
+    HyperbolicTangent,
+    Identity,
+    LogisticFunction,
+    RectifiedLinearUnit,
+    SinusoidFunction,
+  },
+  Network: {
+    Type: {
+      FeedForward: FeedForwardNeuralNetwork,
     },
-    Network: {
-        Type: {
-            FeedForward: FeedForwardNeuralNetwork,
-        },
-    },
+  },
 };

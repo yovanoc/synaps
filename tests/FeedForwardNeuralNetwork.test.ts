@@ -10,13 +10,13 @@ let network: FeedForwardNeuralNetwork;
 
 describe("FeedForwardNeuralNetwork", () => {
 
-  it("should be able to create a Network class correctly" , () => {
-      network = new FeedForwardNeuralNetwork(2, [ 3 ], 1, {
-          hiddenLayerActivationFunction: new HyperbolicTangent(),
-          learningRate: 0.3,
-          outputLayerActivationFunction: new HyperbolicTangent(),
-          seed: 837265,
-      });
+  it("should be able to create a Network class correctly", () => {
+    network = new FeedForwardNeuralNetwork(2, [3], 1, {
+      hiddenLayerActivationFunction: new HyperbolicTangent(),
+      learningRate: 0.3,
+      outputLayerActivationFunction: new HyperbolicTangent(),
+      seed: 837265,
+    });
   });
 
 });

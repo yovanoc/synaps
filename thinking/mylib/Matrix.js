@@ -1,4 +1,4 @@
-import { getRandom } from "./Random"
+import {getRandom} from "./Random"
 
 export class Matrix {
   // Make a matrix full of zeros
